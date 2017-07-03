@@ -1,0 +1,25 @@
+                <link href="../css/layout.css" rel="stylesheet" type="text/css"> 
+                 <div id="right">
+                  <div class="title_container">
+                        <h3 align="center">
+                        <img src="../images/design/title_upcoming.png" width="245" height="30" alt="Upcoming Event">
+                        </h3>
+                    </div><!--end title_container-->
+                    <center>
+                        <p>
+                            <a href="../images/ucc.JPG" rel="lightbox[Upcoming Events]"><img src="../images/ucc.JPG" width="230" height="300" alt="2Pretty" /></a>
+                        </p>
+                    </center>
+                    <div>
+                    <br>
+                    <center>
+                    	<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+						<input type="hidden" name="cmd" value="_s-xclick">
+                        <input type="hidden" name="hosted_button_id" value="QXKJEKN33V3QY">
+                        <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                        <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+                        </form>
+                    </center>
+                    </div>
+                </div><!--end right-->
+      
