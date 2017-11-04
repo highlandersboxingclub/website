@@ -1,74 +1,74 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset
-      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+        xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+    <!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
 
-<url>
-  <loc>http://highlandersboxingclub.org/</loc>
-  <lastmod>2011-11-08T21:02:33+00:00</lastmod>
-  <changefreq>monthly</changefreq>
-</url>
-<url>
-  <loc>http://highlandersboxingclub.org/index.html</loc>
-  <lastmod>2011-11-08T21:02:33+00:00</lastmod>
-  <changefreq>monthly</changefreq>
-</url>
-<url>
-  <loc>http://highlandersboxingclub.org/about_us.html</loc>
-  <lastmod>2011-11-08T21:02:33+00:00</lastmod>
-  <changefreq>monthly</changefreq>
-</url>
-<url>
-  <loc>http://highlandersboxingclub.org/fighters.html</loc>
-  <lastmod>2011-11-08T21:02:33+00:00</lastmod>
-  <changefreq>monthly</changefreq>
-</url>
-<url>
-  <loc>http://highlandersboxingclub.org/Coaches.html</loc>
-  <lastmod>2011-11-08T21:02:33+00:00</lastmod>
-  <changefreq>monthly</changefreq>
-</url>
-<url>
-  <loc>http://highlandersboxingclub.org/sponsors.html</loc>
-  <lastmod>2011-11-08T21:02:33+00:00</lastmod>
-  <changefreq>monthly</changefreq>
-</url>
-<url>
-  <loc>http://highlandersboxingclub.org/upcoming.html</loc>
-  <lastmod>2011-11-08T21:02:33+00:00</lastmod>
-  <changefreq>monthly</changefreq>
-</url>
-<url>
-  <loc>http://highlandersboxingclub.org/past.html</loc>
-  <lastmod>2011-11-08T21:02:33+00:00</lastmod>
-  <changefreq>monthly</changefreq>
-</url>
-<url>
-  <loc>http://highlandersboxingclub.org/membership.html</loc>
-  <lastmod>2011-11-08T21:02:33+00:00</lastmod>
-  <changefreq>monthly</changefreq>
-</url>
-<url>
-  <loc>http://highlandersboxingclub.org/photos.html</loc>
-  <lastmod>2011-11-08T21:02:33+00:00</lastmod>
-  <changefreq>monthly</changefreq>
-</url>
-<url>
-  <loc>http://highlandersboxingclub.org/in_the_news.html</loc>
-  <lastmod>2011-11-08T21:02:33+00:00</lastmod>
-  <changefreq>monthly</changefreq>
-</url>
-<url>
-  <loc>http://highlandersboxingclub.org/videos.html</loc>
-  <lastmod>2011-11-08T21:02:33+00:00</lastmod>
-  <changefreq>monthly</changefreq>
-</url>
-<url>
-  <loc>http://highlandersboxingclub.org/contact_us.html</loc>
-  <lastmod>2011-11-08T21:02:33+00:00</lastmod>
-  <changefreq>monthly</changefreq>
-</url>
+    <url>
+        <loc>http://highlandersboxingclub.org/</loc>
+        <lastmod>2011-11-08T21:02:33+00:00</lastmod>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>http://highlandersboxingclub.org/index.html</loc>
+        <lastmod>2011-11-08T21:02:33+00:00</lastmod>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>http://highlandersboxingclub.org/about_us.html</loc>
+        <lastmod>2011-11-08T21:02:33+00:00</lastmod>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>http://highlandersboxingclub.org/fighters.html</loc>
+        <lastmod>2011-11-08T21:02:33+00:00</lastmod>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>http://highlandersboxingclub.org/Coaches.html</loc>
+        <lastmod>2011-11-08T21:02:33+00:00</lastmod>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>http://highlandersboxingclub.org/sponsors.html</loc>
+        <lastmod>2011-11-08T21:02:33+00:00</lastmod>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>http://highlandersboxingclub.org/upcoming.html</loc>
+        <lastmod>2011-11-08T21:02:33+00:00</lastmod>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>http://highlandersboxingclub.org/past.html</loc>
+        <lastmod>2011-11-08T21:02:33+00:00</lastmod>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>http://highlandersboxingclub.org/membership.html</loc>
+        <lastmod>2011-11-08T21:02:33+00:00</lastmod>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>http://highlandersboxingclub.org/photos.html</loc>
+        <lastmod>2011-11-08T21:02:33+00:00</lastmod>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>http://highlandersboxingclub.org/in_the_news.html</loc>
+        <lastmod>2011-11-08T21:02:33+00:00</lastmod>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>http://highlandersboxingclub.org/videos.html</loc>
+        <lastmod>2011-11-08T21:02:33+00:00</lastmod>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>http://highlandersboxingclub.org/contact_us.html</loc>
+        <lastmod>2011-11-08T21:02:33+00:00</lastmod>
+        <changefreq>monthly</changefreq>
+    </url>
 </urlset>

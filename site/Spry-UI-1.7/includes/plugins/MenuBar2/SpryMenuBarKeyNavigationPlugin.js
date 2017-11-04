@@ -27,216 +27,198 @@
 // ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 // POSSIBILITY OF SUCH DAMAGE.
 
-(function() { // BeginSpryComponent
+(function () { // BeginSpryComponent
 
-if (typeof Spry == "undefined" || !Spry.Widget || !Spry.Widget.MenuBar2)
-{
-	alert("SpryMenuBarKeyNavigationPlugin.js requires SpryMenu.js!");
-	return;
-}
+    if (typeof Spry == "undefined" || !Spry.Widget || !Spry.Widget.MenuBar2) {
+        alert("SpryMenuBarKeyNavigationPlugin.js requires SpryMenu.js!");
+        return;
+    }
 
-var KNP = Spry.Widget.MenuBar2.KeyNavigationPlugin = {
-	config: {
-		pluginOptionsProp:   "KNP",
-		horizontalLayoutMap: { MenuBar: true }
-	},
+    var KNP = Spry.Widget.MenuBar2.KeyNavigationPlugin = {
+        config: {
+            pluginOptionsProp: "KNP",
+            horizontalLayoutMap: {MenuBar: true}
+        },
 
-	initialize: function(mb)
-	{
-		var opts = mb.setOptions({}, KNP.config);
+        initialize: function (mb) {
+            var opts = mb.setOptions({}, KNP.config);
 
-		if (mb[opts.pluginOptionsProp])
-			mb.setOptions(opts, mb[opts.pluginOptionsProp]);
+            if (mb[opts.pluginOptionsProp])
+                mb.setOptions(opts, mb[opts.pluginOptionsProp]);
 
-		mb[opts.pluginOptionsProp] = opts;
+            mb[opts.pluginOptionsProp] = opts;
 
-		mb.addObserver(this);
-	},
+            mb.addObserver(this);
+        },
 
-	KEY_TAB:    9,
-	KEY_ESC:   27,
-	KEY_UP:    38,
-	KEY_DOWN:  40,
-	KEY_LEFT:  37,
-	KEY_RIGHT: 39,
-	KEY_SPACE: 32,
+        KEY_TAB: 9,
+        KEY_ESC: 27,
+        KEY_UP: 38,
+        KEY_DOWN: 40,
+        KEY_LEFT: 37,
+        KEY_RIGHT: 39,
+        KEY_SPACE: 32,
 
-	getOptions: function(mb)
-	{
-		return mb[KNP.config.pluginOptionsProp];
-	},
+        getOptions: function (mb) {
+            return mb[KNP.config.pluginOptionsProp];
+        },
 
-	bindEventCBFunc: function(cbName, mb, mi)
-	{
-		return function(e) { return KNP[cbName](e, mb, mi); };
-	},
+        bindEventCBFunc: function (cbName, mb, mi) {
+            return function (e) {
+                return KNP[cbName](e, mb, mi);
+            };
+        },
 
-	getIndexOf: function(arr, item)
-	{
-		if (arr && arr.length)
-		{
-			for (var i = 0; i < arr.length; i++)
-			{
-				if (arr[i] == item)
-					return i;
-			}
-		}
-		return -1;
-	},
+        getIndexOf: function (arr, item) {
+            if (arr && arr.length) {
+                for (var i = 0; i < arr.length; i++) {
+                    if (arr[i] == item)
+                        return i;
+                }
+            }
+            return -1;
+        },
 
-	menuIsHorizontal: function(mb, m)
-	{
-		var menuLevel = mb.getMenuLevel(m);
-		var cname = menuLevel ? "MenuLevel" + menuLevel : "MenuBar";
-		return KNP.getOptions(mb).horizontalLayoutMap[cname] ? true : false;
-	},
+        menuIsHorizontal: function (mb, m) {
+            var menuLevel = mb.getMenuLevel(m);
+            var cname = menuLevel ? "MenuLevel" + menuLevel : "MenuBar";
+            return KNP.getOptions(mb).horizontalLayoutMap[cname] ? true : false;
+        },
 
-	goToMenuItemByOffset: function(mb, mi, offset)
-	{
-		var menu = mb.getParentMenuForElement(mi, true);
-		if (menu)
-		{
-			var mItems = mb.getMenuItemsForMenu(menu);
-			if (mItems.length)
-			{
-				var miIndex = KNP.getIndexOf(mItems, mi);
-				if (miIndex >= 0)
-				{
-				 	miIndex += offset;
-					if (miIndex >= 0 && miIndex < mItems.length)
-					{
-						mi = mItems[miIndex];
-						KNP.setCurrentMenuItem(mb, mi);
-					}
-				}
-			}
-		}
-		return false;
-	},
+        goToMenuItemByOffset: function (mb, mi, offset) {
+            var menu = mb.getParentMenuForElement(mi, true);
+            if (menu) {
+                var mItems = mb.getMenuItemsForMenu(menu);
+                if (mItems.length) {
+                    var miIndex = KNP.getIndexOf(mItems, mi);
+                    if (miIndex >= 0) {
+                        miIndex += offset;
+                        if (miIndex >= 0 && miIndex < mItems.length) {
+                            mi = mItems[miIndex];
+                            KNP.setCurrentMenuItem(mb, mi);
+                        }
+                    }
+                }
+            }
+            return false;
+        },
 
-	goToNextMenuItem: function(mb, mi) { return KNP.goToMenuItemByOffset(mb, mi, 1); },
-	goToPreviousMenuItem: function(mb, mi) { return KNP.goToMenuItemByOffset(mb, mi, -1); },
+        goToNextMenuItem: function (mb, mi) {
+            return KNP.goToMenuItemByOffset(mb, mi, 1);
+        },
+        goToPreviousMenuItem: function (mb, mi) {
+            return KNP.goToMenuItemByOffset(mb, mi, -1);
+        },
 
-	openMenuItemSubMenu: function(mb, mi)
-	{
-		var subMenu = mb.getSubMenuForMenuItem(mi);
-		if (subMenu)
-		{
-			var subMI = mb.getMenuItemsForMenu(subMenu)[0];
-			if (subMI)
-				KNP.setCurrentMenuItem(mb, subMI);
-		}
-	},
-	
-	closeParentMenu: function(mb, mi)
-	{
-		var menu = mb.getParentMenuForElement(mi, true);
-		if (menu)
-		{
-			var parentMI = mb.getMenuItemForSubMenu(menu);
-			var parentMenu = mb.getParentMenuForElement(menu);
-			if (parentMI)
-				KNP.setCurrentMenuItem(mb, parentMI);
-		}
-	},
+        openMenuItemSubMenu: function (mb, mi) {
+            var subMenu = mb.getSubMenuForMenuItem(mi);
+            if (subMenu) {
+                var subMI = mb.getMenuItemsForMenu(subMenu)[0];
+                if (subMI)
+                    KNP.setCurrentMenuItem(mb, subMI);
+            }
+        },
 
-	setCurrentMenuItem: function(mb, mi)
-	{
-		var cmi = mb.currentMenuItem;
-		if (cmi && cmi == mi)
-			return;
+        closeParentMenu: function (mb, mi) {
+            var menu = mb.getParentMenuForElement(mi, true);
+            if (menu) {
+                var parentMI = mb.getMenuItemForSubMenu(menu);
+                var parentMenu = mb.getParentMenuForElement(menu);
+                if (parentMI)
+                    KNP.setCurrentMenuItem(mb, parentMI);
+            }
+        },
 
-		mb.setCurrentMenuItem(mi, true);
+        setCurrentMenuItem: function (mb, mi) {
+            var cmi = mb.currentMenuItem;
+            if (cmi && cmi == mi)
+                return;
 
-		if (cmi)
-			mb.hideSubMenu(mb.getParentMenuForElement(cmi), mb.getParentMenuForElement(mi));
+            mb.setCurrentMenuItem(mi, true);
 
-		if (mi.focus)
-			mi.focus();
-	},
+            if (cmi)
+                mb.hideSubMenu(mb.getParentMenuForElement(cmi), mb.getParentMenuForElement(mi));
 
-	handleKeyDown: function(evt, mb, mi)
-	{
-		if (mi != mb.currentMenuItem)
-			return;
+            if (mi.focus)
+                mi.focus();
+        },
 
-		var menu = mb.getParentMenuForElement(mi, true);
-		var isHorizontal = KNP.menuIsHorizontal(mb, menu);
-		var result = undefined;
+        handleKeyDown: function (evt, mb, mi) {
+            if (mi != mb.currentMenuItem)
+                return;
 
-		switch (evt.keyCode)
-		{
-			case KNP.KEY_TAB:
-			case KNP.KEY_ESC:
-				mb.setCurrentMenuItem(null, true);
-				mb.hideSubMenu(mb.getParentMenuForElement(mi));	
-				if (mi.blur)
-					mi.blur();
-				if (evt.keyCode != KNP.KEY_TAB)
-					result = false;
-				break;
-			case KNP.KEY_RIGHT:
-				if (isHorizontal)
-					KNP.goToNextMenuItem(mb, mi);
-				else
-					KNP.openMenuItemSubMenu(mb, mi);
-				result = false;
-				break;
-			case KNP.KEY_LEFT:
-				if (isHorizontal)
-					KNP.goToPreviousMenuItem(mb, mi);
-				else
-					KNP.closeParentMenu(mb, mi);
-				result = false;
-				break;
-			case KNP.KEY_UP:
-				if (isHorizontal)
-					KNP.closeParentMenu(mb, mi);
-				else
-					KNP.goToPreviousMenuItem(mb, mi);
-				result = false;
-				break;
-			case KNP.KEY_DOWN:
-				if (isHorizontal)
-					KNP.openMenuItemSubMenu(mb, mi);
-				else
-					KNP.goToNextMenuItem(mb, mi);
-				result = false;
-				break;
-			case KNP.KEY_SPACE:
-				KNP.openMenuItemSubMenu(mb, mi);
-				result = false;
-				break;
-		}
+            var menu = mb.getParentMenuForElement(mi, true);
+            var isHorizontal = KNP.menuIsHorizontal(mb, menu);
+            var result = undefined;
 
-		return result;
-	},
+            switch (evt.keyCode) {
+                case KNP.KEY_TAB:
+                case KNP.KEY_ESC:
+                    mb.setCurrentMenuItem(null, true);
+                    mb.hideSubMenu(mb.getParentMenuForElement(mi));
+                    if (mi.blur)
+                        mi.blur();
+                    if (evt.keyCode != KNP.KEY_TAB)
+                        result = false;
+                    break;
+                case KNP.KEY_RIGHT:
+                    if (isHorizontal)
+                        KNP.goToNextMenuItem(mb, mi);
+                    else
+                        KNP.openMenuItemSubMenu(mb, mi);
+                    result = false;
+                    break;
+                case KNP.KEY_LEFT:
+                    if (isHorizontal)
+                        KNP.goToPreviousMenuItem(mb, mi);
+                    else
+                        KNP.closeParentMenu(mb, mi);
+                    result = false;
+                    break;
+                case KNP.KEY_UP:
+                    if (isHorizontal)
+                        KNP.closeParentMenu(mb, mi);
+                    else
+                        KNP.goToPreviousMenuItem(mb, mi);
+                    result = false;
+                    break;
+                case KNP.KEY_DOWN:
+                    if (isHorizontal)
+                        KNP.openMenuItemSubMenu(mb, mi);
+                    else
+                        KNP.goToNextMenuItem(mb, mi);
+                    result = false;
+                    break;
+                case KNP.KEY_SPACE:
+                    KNP.openMenuItemSubMenu(mb, mi);
+                    result = false;
+                    break;
+            }
 
-	handleFocus: function(evt, mb, mi)
-	{
-		if (!mb.currentMenuItem)
-			mb.setCurrentMenuItem(mi, true);
-	},
+            return result;
+        },
 
-	onPostTransformMarkup: function(mb, evt)
-	{
-		var links = Spry.$$("." + mb.menuItemClass, mb.element);
-		if (links.length)
-		{
-			for (var i = 0; i < links.length; i++)
-			{
-				var l = links[i];
-				l.tabIndex = i ? "-1" : "0";
-				mb.addEventListener(l, "keydown", KNP.bindEventCBFunc("handleKeyDown", mb, l), false);
-				mb.addEventListener(l, "focus", KNP.bindEventCBFunc("handleFocus", mb, l), false);
-			}
-		}
-	}
-};
+        handleFocus: function (evt, mb, mi) {
+            if (!mb.currentMenuItem)
+                mb.setCurrentMenuItem(mi, true);
+        },
+
+        onPostTransformMarkup: function (mb, evt) {
+            var links = Spry.$$("." + mb.menuItemClass, mb.element);
+            if (links.length) {
+                for (var i = 0; i < links.length; i++) {
+                    var l = links[i];
+                    l.tabIndex = i ? "-1" : "0";
+                    mb.addEventListener(l, "keydown", KNP.bindEventCBFunc("handleKeyDown", mb, l), false);
+                    mb.addEventListener(l, "focus", KNP.bindEventCBFunc("handleFocus", mb, l), false);
+                }
+            }
+        }
+    };
 
 // We want to add our plugin to the default configuration for MenuBar2 if it is included!
 
-Spry.Widget.MenuBar2.config.plugIns.push(Spry.Widget.MenuBar2.KeyNavigationPlugin);
+    Spry.Widget.MenuBar2.config.plugIns.push(Spry.Widget.MenuBar2.KeyNavigationPlugin);
 
 })(); // EndSpryComponent
 
