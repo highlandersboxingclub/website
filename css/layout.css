@@ -66,6 +66,12 @@ body {
     min-height: 295px;
 }
 
+#left_inside.photos_gallery img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
 #left_fade {
     background-image: url(../images/design/bg_body_fade.png);
     background-repeat: repeat-x;
